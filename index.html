@@ -305,7 +305,7 @@
                               <!-- <li><input type="text" name="address" id="address" placeholder="Address:"></li> -->
                               <li><input type="number" id="name" name="name" class="required" placeholder="Contact Number  : +91 7719959593" disabled selected></li>
                               <li><input type="number" id="name" name="name" class="required" placeholder="Alternate Number  : +91 7071112075" disabled selected></li>
-                              <li><input class="thbg-color" type="submit" value="comming soon" onclick="redirectToTournamentPage()"></li>
+                              <li><input class="thbg-color" type="button" value="comming soon" onclick="redirect()"></li>
                            </ul>
                            <div class="hidden-me" id="contact_form_responce">
                               <p></p>
@@ -1569,12 +1569,10 @@
       </script>
 
       <script>
-         function redirectToTournamentPage() {
-         // Use JavaScript to redirect to the desired HTML file
-         window.location.href = 'tournamentp.html';
-}
+         function redirect() {
+            window.location.href = "tournamentp.html"; // Replace "tournament.html" with the actual page URL you want to redirect to
+         }
       </script>
-
 
      
 
