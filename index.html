@@ -765,7 +765,7 @@
              var AlternateNumber = document.getElementById("AlternateNumber").value;
          
              var whatsappurl =
-                 "https://wa.me/917820803540?" +
+                 "https://wa.me/917719959593?" +
                  "text=Tournament%20Name%3A%20" + encodeURIComponent(TournamentName) + "%0a" +
                  "Organizer's%20Name%3A%20" + encodeURIComponent(OrganizersName) + "%0a" +
                  "Email%3A%20" + encodeURIComponent(email) + "%0a" +
@@ -1395,16 +1395,16 @@
                      <div class="contact-us">
                         <form method="post" class="comments-form" id="contactform">
                            <ul>
-                              <li><input type="text" id="name" name="name" class="required" placeholder="Name *"></li>
-                              <li><input type="text" id="email" name="email" class="required email" placeholder="Email *"></li>
-                              <li><input type="text" name="address" id="address" placeholder="Address:"></li>
-                              <li><textarea name="message" id="message" placeholder="Add your message"></textarea></li>
-                              <li><input class="thbg-color" type="submit" onclick="whatsapp()" value="send"></li>
+                               <li><input type="text" name="na" id="na" class="required" placeholder="Name *"></li>
+                               <li><input type="text" name="em" id="em" class="required email" placeholder="Email *"></li>
+                               <li><input type="text" name="address" id="address" placeholder="Address:"></li>
+                               <li><textarea name="message" id="message" placeholder="Add your message"></textarea></li>
+                               <li><input class="thbg-color" type="button" onclick="whatsappc()" value="send"></li> <!-- Change type to "button" to prevent form submission -->
                            </ul>
                            <div class="hidden-me" id="contact_form_responce">
-                              <p></p>
+                               <p></p>
                            </div>
-                        </form>
+                       </form>
                      </div>
                   </div>
                </div>
@@ -1413,13 +1413,14 @@
       </section>
       <script>
          function whatsappc() {
-             var name = document.getElementById("name").value;
-             var email = document.getElementById("email").value;
+             console.log("Button clicked"); // Add this line for debugging
+             var name = document.getElementById("na").value;
+             var email = document.getElementById("em").value;
              var address = document.getElementById("address").value;
              var message = document.getElementById("message").value;
          
              var whatsappurl =
-                 "https://wa.me/917820803540?" +
+                 "https://wa.me/917719959593?" +
                  "text=Name%3A%20" + encodeURIComponent(name) + "%0a" +
                  "Email%3A%20" + encodeURIComponent(email) + "%0a" +
                  "Address%3A%20" + encodeURIComponent(address) + "%0a" +
@@ -1427,7 +1428,8 @@
          
              window.open(whatsappurl, "_blank").focus();
          }
-         </script>
+      </script>
+       
          
 
       <section>
@@ -1569,7 +1571,7 @@
       <script>
          function redirectToTournamentPage() {
          // Use JavaScript to redirect to the desired HTML file
-         window.location.href = 'tournament_r.html';
+         window.location.href = 'tournamentp.html';
 }
       </script>
 

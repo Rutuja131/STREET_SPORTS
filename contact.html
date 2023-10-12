@@ -118,11 +118,11 @@
                      <div class="contact-us">
                         <form method="post" class="comments-form" id="contactform">
                            <ul>
-                              <li><input type="text" id="name" name="name" class="required" placeholder="Name *"></li>
-                              <li><input type="text" id="email" name="email" class="required email" placeholder="Email *"></li>
+                              <li><input type="text" id="na" name="na" class="required" placeholder="Name *"></li>
+                              <li><input type="text" id="em" name="em" class="required email" placeholder="Email *"></li>
                               <li><input type="text" name="address" id="address" placeholder="Address:"></li>
                               <li><textarea name="message" id="message" placeholder="Add your message"></textarea></li>
-                              <li><input class="thbg-color" type="submit" value="send"></li>
+                              <li><input class="thbg-color" type="submit" onclick="whatsappcn()" value="send"></li>
                            </ul>
                            <div class="hidden-me" id="contact_form_responce">
                               <p></p>
@@ -134,7 +134,24 @@
             </div>
          </div>
       </section>
-
+      <script>
+         function whatsappcn() {
+             console.log("Button clicked"); // Add this line for debugging
+             var name = document.getElementById("na").value;
+             var email = document.getElementById("em").value;
+             var address = document.getElementById("address").value;
+             var message = document.getElementById("message").value;
+         
+             var whatsappurl =
+                 "https://wa.me/917719959593?" +
+                 "text=Name%3A%20" + encodeURIComponent(name) + "%0a" +
+                 "Email%3A%20" + encodeURIComponent(email) + "%0a" +
+                 "Address%3A%20" + encodeURIComponent(address) + "%0a" +
+                 "Message%3A%20" + encodeURIComponent(message);
+         
+             window.open(whatsappurl, "_blank");
+         }
+      </script>
       <footer id="footer" class="footer">
          <div class="container">
             <div class="row">
