@@ -739,24 +739,62 @@
                      <div class="contact-us">
                         <form method="post" class="comments-form" id="contactform">
                            <ul>
-                              <li><input type="text" id="name" name="name" class="required" placeholder="Tournament Name *"></li>
-                              <li><input type="text" id="name" name="name" class="required" placeholder="Organizer's Name *"></li>
-                              <li><input type="text" id="email" name="email" class="required email" placeholder="Email *"></li>
-                              <!-- <li><input type="text" name="address" id="address" placeholder="Address:"></li> -->
-                              <li><input type="number" id="name" name="name" class="required" placeholder="Contact Number *"></li>
-                              <li><input type="number" id="name" name="name" class="required" placeholder="Alternate Number *"></li>
-                              <li><input class="thbg-color" type="submit" value="Request Live Stream"></li>
+                               <li><input type="text" id="TournamentName" name="Tournament Name" class="required" placeholder="Tournament Name *"></li>
+                               <li><input type="text" id="OrganizersName" name="Organizer's Name" class="required" placeholder="Organizer's Name *"></li>
+                               <li><input type="text" id="email" name="email" class="required email" placeholder="Email *"></li>
+                               <li><input type="number" id="ContactNumber" name="Contact Number" class="required" placeholder="Contact Number *"></li>
+                               <li><input type="number" id="AlternateNumber" name="Alternate Number" class="required" placeholder="Alternate Number *"></li>
+                               <li><input class="thbg-color" type="submit" onclick="whatsapp()" value="Request Live Stream"></li>
                            </ul>
-                           <div class="hidden-me" id="contact_form_responce">
-                              <p></p>
+                           <div class="hidden-me" id="contact_form_response">
+                               <p></p>
                            </div>
-                        </form>
+                       </form>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </section>
+      <script>
+         function whatsapp() {
+             var TournamentName = document.getElementById("TournamentName").value;
+             var OrganizersName = document.getElementById("OrganizersName").value;
+             var email = document.getElementById("email").value;
+             var ContactNumber = document.getElementById("ContactNumber").value;
+             var AlternateNumber = document.getElementById("AlternateNumber").value;
+         
+             var whatsappurl =
+                 "https://wa.me/917820803540?" +
+                 "text=Tournament%20Name%3A%20" + encodeURIComponent(TournamentName) + "%0a" +
+                 "Organizer's%20Name%3A%20" + encodeURIComponent(OrganizersName) + "%0a" +
+                 "Email%3A%20" + encodeURIComponent(email) + "%0a" +
+                 "Contact%20Number%3A%20" + encodeURIComponent(ContactNumber) + "%0a" +
+                 "Alternate%20Number%3A%20" + encodeURIComponent(AlternateNumber);
+         
+             window.open(whatsappurl, "_blank");
+         }
+      </script>
+         
+
+      <!-- <script>
+         function whatsapp(){
+      var Tournamentname = document.getElementById("Tournament Name").value;
+      var OrganizersName = document.getElementById("Organizer's Name").value;
+      var email = document.getElementById("email").value;
+      var Contactnumber = document.getElementById("Contact Number").value;
+      var Alternatenumber = document.getElementById("Alternate Number").value;
+
+      var whatsappurl = "https://wa.me/917820803540?="
+      + "Tournament Name :"+TournamentName +"%0a"
+      + "Organizers Name :"+OrganizersName+"%0a"
+      + "email :"+email+"%0a"
+      + "Contact number :"+Contactnumber+"%0a"
+      + "Alternate number :"+ Alternatenumber+
+
+      window.open(whatsappurl,"_blank").focus();
+         }
+      </script> -->
       <!-- <section>
          <div style="margin-left: 25%;" class="col-md-6">
             <div class="contact-us">
@@ -1361,7 +1399,7 @@
                               <li><input type="text" id="email" name="email" class="required email" placeholder="Email *"></li>
                               <li><input type="text" name="address" id="address" placeholder="Address:"></li>
                               <li><textarea name="message" id="message" placeholder="Add your message"></textarea></li>
-                              <li><input class="thbg-color" type="submit" value="send"></li>
+                              <li><input class="thbg-color" type="submit" onclick="whatsappc()" value="send"></li>
                            </ul>
                            <div class="hidden-me" id="contact_form_responce">
                               <p></p>
@@ -1373,6 +1411,24 @@
             </div>
          </div>
       </section>
+      <script>
+         function whatsappc() {
+             var name = document.getElementById("name").value;
+             var email = document.getElementById("email").value;
+             var address = document.getElementById("address").value;
+             var message = document.getElementById("message").value;
+         
+             var whatsappurl =
+                 "https://wa.me/917820803540?" +
+                 "text=Name%3A%20" + encodeURIComponent(name) + "%0a" +
+                 "Email%3A%20" + encodeURIComponent(email) + "%0a" +
+                 "Address%3A%20" + encodeURIComponent(address) + "%0a" +
+                 "Message%3A%20" + encodeURIComponent(message);
+         
+             window.open(whatsappurl, "_blank");
+         }
+         </script>
+         
 
       <section>
          <div class="container">
