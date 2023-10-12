@@ -1399,7 +1399,7 @@
                               <li><input type="text" id="email" name="email" class="required email" placeholder="Email *"></li>
                               <li><input type="text" name="address" id="address" placeholder="Address:"></li>
                               <li><textarea name="message" id="message" placeholder="Add your message"></textarea></li>
-                              <li><input class="thbg-color" type="submit" onclick="whatsappc()" value="send"></li>
+                              <li><input class="thbg-color" type="submit" onclick="whatsapp()" value="send"></li>
                            </ul>
                            <div class="hidden-me" id="contact_form_responce">
                               <p></p>
@@ -1425,7 +1425,7 @@
                  "Address%3A%20" + encodeURIComponent(address) + "%0a" +
                  "Message%3A%20" + encodeURIComponent(message);
          
-             window.open(whatsappurl, "_blank");
+             window.open(whatsappurl, "_blank").focus();
          }
          </script>
          
