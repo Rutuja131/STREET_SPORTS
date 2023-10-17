@@ -741,7 +741,7 @@
                            <ul>
                                <li><input type="text" id="TournamentName" name="Tournament Name" class="required" placeholder="Tournament Name *"></li>
                                <li><input type="text" id="OrganizersName" name="Organizer's Name" class="required" placeholder="Organizer's Name *"></li>
-                               <li><input type="text" id="email" name="email" class="required email" placeholder="Email *"></li>
+                               <li><input type="text" id="Email" name="email" class="required Email" required maxlength="30" autofocus pattern="[A-Z,a-z,0-9]{10-15}" placeholder="Email *"></li>
                                <li><input type="number" id="ContactNumber" name="Contact Number" class="required" placeholder="Contact Number *"></li>
                                <li><input type="number" id="AlternateNumber" name="Alternate Number" class="required" placeholder="Alternate Number *"></li>
                                <li><input class="thbg-color" type="submit" onclick="whatsapp()" value="Request Live Stream"></li>
@@ -760,7 +760,7 @@
          function whatsapp() {
              var TournamentName = document.getElementById("TournamentName").value;
              var OrganizersName = document.getElementById("OrganizersName").value;
-             var email = document.getElementById("email").value;
+             var Email = document.getElementById("Email").value;
              var ContactNumber = document.getElementById("ContactNumber").value;
              var AlternateNumber = document.getElementById("AlternateNumber").value;
          
@@ -768,7 +768,7 @@
                  "https://wa.me/917719959593?" +
                  "text=Tournament%20Name%3A%20" + encodeURIComponent(TournamentName) + "%0a" +
                  "Organizer's%20Name%3A%20" + encodeURIComponent(OrganizersName) + "%0a" +
-                 "Email%3A%20" + encodeURIComponent(email) + "%0a" +
+                 "Email%3A%20" + encodeURIComponent(Email) + "%0a" +
                  "Contact%20Number%3A%20" + encodeURIComponent(ContactNumber) + "%0a" +
                  "Alternate%20Number%3A%20" + encodeURIComponent(AlternateNumber);
          
