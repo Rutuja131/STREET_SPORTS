@@ -305,7 +305,7 @@
                               <!-- <li><input type="text" name="address" id="address" placeholder="Address:"></li> -->
                               <li><input type="number" id="name" name="name" class="required" placeholder="Contact Number  : +91 7719959593" disabled selected></li>
                               <li><input type="number" id="name" name="name" class="required" placeholder="Alternate Number  : +91 7071112075" disabled selected></li>
-                              <li><input class="thbg-color" type="submit" value="comming soon" onclick="redirectToTournamentPage()"></li>
+                              <li><input class="thbg-color" type="button" value="comming soon" onclick="redirect()"></li>
                            </ul>
                            <div class="hidden-me" id="contact_form_responce">
                               <p></p>
@@ -392,7 +392,7 @@
                   </div>
               </div>
               <div class="upcoming-match-cardm">
-               <h3>Upcoming Match</h3>
+               <h4>Upcoming Match</h4>
                <div class="teamsm">
                    <div class="teamm">
                        <img src="images/img-04.png" alt="Team 1 Logo">
@@ -714,7 +714,7 @@
                <div class="col-md-12">
                   <div class="full">
                      <div class="main-heading sytle-2">
-                        <h2>Request Live Stream</h2>
+                        <h2>Register for Auction</h2>
                         <p>We are excited to organize an upcoming event that holds great importance for us, and we are in search of a reliable livestream service provider to ensure its success.</p>
                      </div>
                   </div>
@@ -731,20 +731,19 @@
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.580671926123!2d77.31096031514461!3d28.582351982437654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfcad59dc9d0b%3A0xe4060212422c0b9a!2sLeopedia+Web+Solutions!5e0!3m2!1sen!2sin!4v1511962485065" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                      </div> -->
                   </div>
-                  <div class="col-md-6" style="background-image: url(images/street.jpg);">
+                  <div class="col-md-6" style="background-image: url(images/ac.webp);">
                      <iframe src="" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                      
                   </div>
                   <div class="col-md-6">
                      <div class="contact-us">
-                        <form method="post" class="comments-form" id="contactform">
+                        <form method="post" action="https://script.google.com/macros/s/AKfycbyfdrBQz0RU9DwTcLtahEbVsnOQpOW3rrBZ3dJOrfg3PyKUP4d1mEFMdxyEHoR3mcMTug/exec" class="comments-form" name="contactform" id="contactform" >
                            <ul>
-                               <li><input type="text" id="TournamentName" name="Tournament Name" class="required" placeholder="Tournament Name *"></li>
-                               <li><input type="text" id="OrganizersName" name="Organizer's Name" class="required" placeholder="Organizer's Name *"></li>
-                               <li><input type="text" id="Email" name="email" class="required Email" required maxlength="30" autofocus pattern="[A-Z,a-z,0-9]{10-15}" placeholder="Email *"></li>
-                               <li><input type="number" id="ContactNumber" name="Contact Number" class="required" placeholder="Contact Number *"></li>
-                               <li><input type="number" id="AlternateNumber" name="Alternate Number" class="required" placeholder="Alternate Number *"></li>
-                               <li><input class="thbg-color" type="submit" onclick="whatsapp()" value="Request Live Stream"></li>
+                               <li><input type="text" id="Player Name" name="Player Name" class="required" placeholder="Player Name *"  ></li>
+                               <li><input type="text" id="em" name="em" class="required " placeholder="Email *"></li>
+                               <li><input type="number" id="ContactNumber" name="Contact Number" class="required" placeholder="Contact Number *" ></li>
+                               <li><input type="number" id="AlternateNumber" name="Alternate Number" class="required" placeholder="Alternate Number *" ></li>
+                               <li><input class="thbg-color" type="submit"  value="Register for Auction"></li>
                            </ul>
                            <div class="hidden-me" id="contact_form_response">
                                <p></p>
@@ -756,25 +755,40 @@
             </div>
          </div>
       </section>
+      
       <script>
+         const scriptURL = 'https://script.google.com/macros/s/AKfycbyfdrBQz0RU9DwTcLtahEbVsnOQpOW3rrBZ3dJOrfg3PyKUP4d1mEFMdxyEHoR3mcMTug/exec'
+         const form = document.forms['contactform']
+      
+         form.addEventListener('submit', e => {
+         e.preventDefault()
+         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thank you! your form is submitted successfully." ))
+            .then(() => {  window.location.reload(); })
+            .catch(error => console.error('Error!', error.message))
+         })
+      </script>
+
+      
+      <!-- <script>
          function whatsapp() {
              var TournamentName = document.getElementById("TournamentName").value;
              var OrganizersName = document.getElementById("OrganizersName").value;
-             var Email = document.getElementById("Email").value;
+             var email = document.getElementById("em").value;
              var ContactNumber = document.getElementById("ContactNumber").value;
              var AlternateNumber = document.getElementById("AlternateNumber").value;
          
              var whatsappurl =
-                 "https://wa.me/917719959593?" +
+                 "https://wa.me/918378865747?" +
                  "text=Tournament%20Name%3A%20" + encodeURIComponent(TournamentName) + "%0a" +
                  "Organizer's%20Name%3A%20" + encodeURIComponent(OrganizersName) + "%0a" +
-                 "Email%3A%20" + encodeURIComponent(Email) + "%0a" +
+                 "Email%3A%20" + encodeURIComponent(em) + "%0a" +
                  "Contact%20Number%3A%20" + encodeURIComponent(ContactNumber) + "%0a" +
                  "Alternate%20Number%3A%20" + encodeURIComponent(AlternateNumber);
          
              window.open(whatsappurl, "_blank");
          }
-      </script>
+      </script> -->
          
 
       <!-- <script>
@@ -1420,7 +1434,7 @@
              var message = document.getElementById("message").value;
          
              var whatsappurl =
-                 "https://wa.me/917719959593?" +
+                 "https://wa.me/918378865747?" +
                  "text=Name%3A%20" + encodeURIComponent(name) + "%0a" +
                  "Email%3A%20" + encodeURIComponent(email) + "%0a" +
                  "Address%3A%20" + encodeURIComponent(address) + "%0a" +
@@ -1501,14 +1515,14 @@
                   <div class="footer-widget">
                      <h3>Menu</h3>
                      <ul class="footer-menu">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="team.html">Players</a></li>
-                        <li><a href="all-products/html/index.html">Products</a></li>
-                        <li><a href="news.html">Latest News</a></li>
+                        <li><a href="https://merchant.razorpay.com/policy/MnumMvuxJMA4Di/privacy">Privacy Policy</a></li>
+                        <li><a href="https://merchant.razorpay.com/policy/MnumMvuxJMA4Di/terms">Terms and Conditions</a></li>
+                        <li><a href="https://merchant.razorpay.com/policy/MnumMvuxJMA4Di/refund">Cancellation and Refund Policy</a></li>
+                        <li><a href="https://merchant.razorpay.com/policy/MnumMvuxJMA4Di/shipping">Shipping And Delivery Policy</a></li>
                         <li><a href="tournament.html">Upcoming Tournaments</a></li>
                         <li><a href="points.html">Points Table</a></li>
                         <li><a href="blog.html">Our Blog</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="https://merchant.razorpay.com/policy/MnumMvuxJMA4Di/contact_us">Contact Us</a></li>
                      </ul>
                   </div>
                </div>
@@ -1569,12 +1583,10 @@
       </script>
 
       <script>
-         function redirectToTournamentPage() {
-         // Use JavaScript to redirect to the desired HTML file
-         window.location.href = 'tournamentp.html';
-}
+         function redirect() {
+            window.location.href = "tournamentp.html"; // Replace "tournament.html" with the actual page URL you want to redirect to
+         }
       </script>
-
 
      
 
